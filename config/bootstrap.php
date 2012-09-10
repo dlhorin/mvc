@@ -1,5 +1,8 @@
 <?php
 
+ini_set('display_errors', 1);
+error_reporting(E_ALL|E_STRICT);
+
 define('LIBRARY_PATH', APP_PATH . DS . 'libraries');
 
 // 1. sanitise (remove magic quotes, slashes, global vars)
@@ -12,10 +15,8 @@ $routes = array();
 $routes['#^/$#i'] = array('controller' => 'home', 'action' => 'index');
 $routes['#^/home$#i'] = array('controller' => 'home', 'action' => 'index');
 $routes['#^/home/index$#i'] = array('controller' => 'home', 'action' => 'index');
-$routes['#^/things$#i'] = array('controller' => 'things', 'action' => 'index');
-$routes['#^/things/new$#i'] = array('controller' => 'things', 'action' => 'add');
-$routes['#^things/create$#i'] = array('controller' => 'things', 'action' => 'create');
-$routes['#^/things/([0-9]{1,5})$#i'] = array('controller' => 'things', 'action' => 'show');
-$routes['#^/things/([0-9]{1,5})/edit$#i'] = array('controller' => 'things', 'action' => 'edit');
-$routes['#^/things/([0-9]{1,5})/update$#i'] = array('controller' => 'things', 'action' => 'edit');
+$routes['#^/form1$#i'] = array('controller' => 'form1', 'action' => 'view');
+$routes['#^/form1/view$#i'] = array('controller' => 'form1', 'action' =>'view');
+
+?>
 
